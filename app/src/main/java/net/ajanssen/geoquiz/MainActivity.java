@@ -23,6 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         mFalseButton = findViewById(R.id.false_button);
+        mFalseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 }
