@@ -7,6 +7,6 @@ public class TrueFalse extends Object {
 
     public TrueFalse(int question, boolean trueQuestion) {
         mQuestion = question;
-        mTreQuestion = trueQuestion;
+        mTrueQuestion = trueQuestion;
     }
 }
