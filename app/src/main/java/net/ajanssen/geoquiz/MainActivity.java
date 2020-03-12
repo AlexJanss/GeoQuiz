@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     private int mCurrentIndex = 0;
 
+    private void  updateQuestion() {
+        int question = mQuestionBank[mCurrentIndex].getQuestion();
+        mQuestionTextView.setText(question);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mQuestionTextView = findViewById(R.id.question_text_view);
-        int question = mQuestionBank[mCurrentIndex].getQuestion();
-        mQuestionTextView.setText(question);
 
         mTrueButton  = findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(new View.OnClickListener() {
@@ -60,9 +62,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
-                int question = mQuestionBank[mCurrentIndex].getQuestion();
-                mQuestionTextView.setText(question);
+                updateQuestion();
             }
         });
+
+        updateQuestion();
     }
 }
